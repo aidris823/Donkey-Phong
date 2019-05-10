@@ -29,7 +29,7 @@ def get_lighting(normal, view, ambient, light, areflect, dreflect, sreflect ):
     d = calculate_diffuse(light,dreflect,normal)
     s = calculate_specular(light,sreflect,view,normal)
     i = [a[i] + d[i] + s[i] for i in range(3)]
-    i = limit_color[i]
+    i = limit_color(i)
     return i
 
 

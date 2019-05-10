@@ -58,7 +58,7 @@ def calculate_specular(light, sreflect, view, normal):
     for i in range(3):
         spec[i] = (cos_alpha * normal[i]) - light[LOCATION][i]
     cos_alpha = math.pow(cos_alpha,SPECULAR_EXP)
-    for i in range(len(color)):
+    for i in range(len(spec)):
         spec[i] = light[COLOR][i] * sreflect[i] * cos_alpha
     return limit_color(spec)
         
